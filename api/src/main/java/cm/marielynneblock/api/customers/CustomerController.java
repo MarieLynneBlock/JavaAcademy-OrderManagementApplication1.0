@@ -2,14 +2,14 @@ package cm.marielynneblock.api.customers;
 
 import cm.marielynneblock.service.customers.CustomerService;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+@RestController
+@RequestMapping(path = {"/customer"})
 public class CustomerController {
     private CustomerService customerService;
     private CustomerMapper customerMapper;

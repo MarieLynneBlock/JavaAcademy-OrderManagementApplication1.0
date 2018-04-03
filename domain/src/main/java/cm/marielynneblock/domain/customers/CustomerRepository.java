@@ -1,5 +1,6 @@
 package cm.marielynneblock.domain.customers;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +27,9 @@ public class CustomerRepository {
         customerRepository.add(newCustomer);
     }
 
-    public List<Customer> displayAllCustomers() {
-        return customerRepository;
-    }
+
+//    public List<Customer> displayAllCustomers() {
+//        return customerRepository;
+//    }
 
 }
