@@ -30,19 +30,19 @@ Therefore, we've created two categories of stories: Must-Have's and Nice-To-Have
 however you probably won't have the time to do this during the self-evaluation itself.
 
 **Must-Have stories:**
-- Story 0 (your project setup + other technical requirements)
-- Story 1
-- Story 2
-- Story 3
-- Story 7
-- Story 8
+- [x]  Story 0 (your project setup + other technical requirements)
+- [x]  Story 1
+- [ ]  Story 2
+- [ ]  Story 3
+- [ ]  Story 7
+- [ ]  Story 8
 
 **Nice-To-Have stories:**
-- Story 4
-- Story 5
-- Story 6
-- Story 9
-- Story 10
+- [ ]  Story 4
+- [ ]  Story 5
+- [ ]  Story 6
+- [ ]  Story 9
+- [ ]  Story 10
 
 ## Technical requirements
 
