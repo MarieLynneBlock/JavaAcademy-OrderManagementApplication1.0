@@ -27,8 +27,8 @@ public class CustomerRepository {
     }
 
 
-//    public List<Customer> displayAllCustomers() {
-//        return customerRepository;
-//    }
+    public List<Customer> displayAllCustomers() {
+        return customerRepository;
+    }
 
 }

@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
@@ -26,6 +29,14 @@ public class CustomerController {
         return customerMapper.toDto(
                 customerService.addNewCustomer(
                         customerMapper.toDomain(customerDto)));
+    }
+
+    @PostMapping(produces = APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public List<CustomerDto> displayAllCustomers() {
+        return customerService.displayAllCustomers().stream()
+                .map(customerMapper::toDto)
+                .collect(Collectors.toList());
     }
 
 }
