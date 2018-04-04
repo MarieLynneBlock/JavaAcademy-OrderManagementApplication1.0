@@ -1,43 +1,28 @@
 package cm.marielynneblock.api.orders;
 
+import cm.marielynneblock.api.customers.CustomerDto;
 import cm.marielynneblock.domain.customers.Customer;
 import cm.marielynneblock.domain.orders.ItemGroup;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderDto {
-    private List<ItemGroup> items;
+    private ArrayList<ItemGroupDto> items;
     private double totalPrice;
     private Customer customer;
     private int orderId;
     private LocalDate orderDate;
+    private CustomerDto customerDto;
 
-    public OrderDto() {
+
+    public OrderDto OrderDto() {
+        return new OrderDto();
     }
 
-    public List<ItemGroup> getItems() {
-        return items;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public LocalDate getOrderDate() {
-        return orderDate;
-    }
-
-    public OrderDto withItems(List<ItemGroup> items) {
-        this.items = items;
+    public OrderDto withItems(List<ItemGroupDto> itemGroups) {
+        this.items = new ArrayList<>(itemGroups);
         return this;
     }
 
@@ -61,4 +46,14 @@ public class OrderDto {
         return this;
     }
 
+    public List<ItemGroupDto> getItemsDto() {
+        return items;
+    }
+    public CustomerDto getCustomerDto() {
+        return customerDto;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
 }

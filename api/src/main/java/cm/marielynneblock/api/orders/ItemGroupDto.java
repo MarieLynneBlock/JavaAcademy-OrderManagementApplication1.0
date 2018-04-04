@@ -11,25 +11,9 @@ public class ItemGroupDto {
     private LocalDate orderDate;
     private LocalDate shippingDate;
 
-    public ItemGroupDto() {
+    public ItemGroupDto ItemGroupDto() {
+        return new ItemGroupDto();
     }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public LocalDate getOrderDate() {
-        return orderDate;
-    }
-
-    public LocalDate getShippingDate() {
-        return shippingDate;
-    }
-
     public ItemGroupDto withItem(Item item) {
         this.item = item;
         return this;
@@ -50,4 +34,11 @@ public class ItemGroupDto {
         return this;
     }
 
+    public int getAmount() {
+        return amount;
+    }
+
+    public Item getItem() {
+        return item;
+    }
 }

@@ -13,7 +13,7 @@ public class Order {
     private int orderId;
     private LocalDate orderDate;
 
-    public Order(List<ItemGroup> items, Customer customer, int orderId) {
+    public Order(List<ItemGroup> items, Customer customer) {
         this.items = items;
         this.customer = customer;
         this.orderId = orderId;
