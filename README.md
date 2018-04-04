@@ -32,7 +32,7 @@ however you probably won't have the time to do this during the self-evaluation i
 **Must-Have stories:**
 - [x]  Story 0 (your project setup + other technical requirements)
 - [x]  Story 1
-- [ ]  Story 2
+- [x]  Story 2
 - [ ]  Story 3
 - [x]  Story 7
 - [ ]  Story 8

@@ -7,7 +7,7 @@ public class Customer {
     private final String email;
     private final String phoneNumber;
 
-    Customer(CustomerBuilder builder) {
+    private Customer(CustomerBuilder builder) {
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.address = builder.address;
