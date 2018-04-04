@@ -29,6 +29,10 @@ To properly implement all the stories, in a test-first way with a proper design,
 Therefore, we've created two categories of stories: Must-Have's and Nice-To-Have's. We do advice to also work on the Nice-To-Have's,
 however you probably won't have the time to do this during the self-evaluation itself.
 
+##### My Timing
+Setup: maven, xml
+story 1, story 2, story 3, story 4, story 7 = 12u
+
 **Must-Have stories:**
 - [x]  Story 0 (your project setup + other technical requirements)
 - [x]  Story 1

@@ -20,7 +20,7 @@ public class OrderRepository {
     public Map<Integer, Order> getOrderRepository() {
         return orderRepository;
     }
-    public void addNewItem(Order newOrder) {
+    public void addNewOrder(Order newOrder) {
         orderRepository.put(newOrder.getOrderId(), newOrder);
     }
 }
