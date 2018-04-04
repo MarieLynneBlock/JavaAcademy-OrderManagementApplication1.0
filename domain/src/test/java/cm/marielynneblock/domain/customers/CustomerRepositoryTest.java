@@ -60,14 +60,9 @@ public class CustomerRepositoryTest {
         customerList.add(customer4);
     }
 
-    /*
-     *
-     *   Story 1
-     *
-     */
 
     @Test
-    public void addNewCustomer_WhenNewCustomerIsAddedInEmptyList_ReturnNotANewCustomerList() {
+    public void addNewCustomer_whenNewCustomerIsAddedInEmptyList_returnNotANewCustomerList() {
         testEmptyCustomerRepo.addNewCustomer(customer1);
 
         assertNotEquals(new CustomerRepository(), testEmptyCustomerRepo);
@@ -75,7 +70,7 @@ public class CustomerRepositoryTest {
 
 
     @Test
-    public void addNewCustomer_WhenNewCustomerIsAddedInEmptyList_ReturnNotAnEmptyList() {
+    public void addNewCustomer_whenNewCustomerIsAddedInEmptyList_returnNotAnEmptyList() {
         testEmptyCustomerRepo.addNewCustomer(customer1);
 
         assertNotNull(testEmptyCustomerRepo);
@@ -83,16 +78,16 @@ public class CustomerRepositoryTest {
 
 
     @Test
-    public void addNewCustomer_WhenNewCustomerIsAddedToPopulatedList_AddsToList() {
-        List<Customer> testContainsAll = new ArrayList<>();
-        testContainsAll.add(customer2);
-        testContainsAll.add(customer3);
-        testContainsAll.add(customer4);
-        testContainsAll.add(customer1);
+    public void addNewCustomer_whenNewCustomerIsAddedToPopulatedList_addsToList() {
+        List<Customer> testContainsAllCustomers = new ArrayList<>();
+        testContainsAllCustomers.add(customer2);
+        testContainsAllCustomers.add(customer3);
+        testContainsAllCustomers.add(customer4);
+        testContainsAllCustomers.add(customer1);
 
         testPopulatedCustomerRepo.addNewCustomer(customer1);
 
-        assertEquals(testPopulatedCustomerRepo.getCustomersRepository(), testContainsAll);
+        assertEquals(testPopulatedCustomerRepo.getCustomersRepository(), testContainsAllCustomers);
     }
 
 }
