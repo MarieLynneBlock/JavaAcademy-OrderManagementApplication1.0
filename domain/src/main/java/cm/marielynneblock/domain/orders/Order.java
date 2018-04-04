@@ -41,10 +41,11 @@ public class Order {
         return orderDate;
     }
 
-    public void calculateTotalPrice(List<ItemGroup> items){
+    public void calculateTotalPrice(List<ItemGroup> items) {
         this.totalPrice = 0.0;
-        for(ItemGroup itemgroup : items){
-            this.totalPrice += (itemgroup.getAmount()*itemgroup.getItem().getPrice());
+        for (ItemGroup itemgroup : items) {
+            this.totalPrice += (itemgroup.getAmount() * itemgroup.getItem().getPrice());
         }
     }
+
 }
