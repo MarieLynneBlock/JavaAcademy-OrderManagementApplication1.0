@@ -38,7 +38,7 @@ however you probably won't have the time to do this during the self-evaluation i
 - [ ]  Story 8
 
 **Nice-To-Have stories:**
-- []  Story 4
+- [x]  Story 4
 - [ ]  Story 5
 - [ ]  Story 6
 - [ ]  Story 9

@@ -8,11 +8,9 @@ import java.util.Map;
 @Named
 public class ItemRepository {
     private Map<Integer, Item> itemRepository;
-    int itemId;
 
     public ItemRepository() {
         this.itemRepository = new HashMap<>();
-        this.itemId = 1;
     }
 
     public ItemRepository(Map<Integer, Item> itemRepository) {
@@ -27,7 +25,6 @@ public class ItemRepository {
 
     public void addNewItem(Item newItem) {
         itemRepository.put(newItem.getId(), newItem);
-        itemId++;
     }
 
     public void updateItem(Item updatedItem) {
