@@ -4,8 +4,7 @@ import cm.marielynneblock.domain.customers.Customer;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -13,8 +12,8 @@ public class ItemRepositoryTest {
     private ItemRepository testEmptyItemRepo;
     private ItemRepository testPopulatedItemRepo;
 
-    private List<Item> itemList = new ArrayList<>();
-    private Item item1, item2, item3, item4;
+    private Map<Integer, Item> itemList = new HashMap<>();
+    private Item item1, item2, item3, item4, item5;
 
     @Before
     public void setup() {
@@ -28,6 +27,7 @@ public class ItemRepositoryTest {
                 .withDescription("Item 1")
                 .withPrice(1.1)
                 .withStockAmount(1)
+                .withId(1)
                 .build();
 
         item2 = new Item.ItemBuilder()
@@ -35,6 +35,7 @@ public class ItemRepositoryTest {
                 .withDescription("Item 2")
                 .withPrice(2.2)
                 .withStockAmount(2)
+                .withId(2)
                 .build();
 
         item3 = new Item.ItemBuilder()
@@ -42,6 +43,7 @@ public class ItemRepositoryTest {
                 .withDescription("Item 3")
                 .withPrice(3.3)
                 .withStockAmount(3)
+                .withId(3)
                 .build();
 
         item4 = new Item.ItemBuilder()
@@ -49,23 +51,24 @@ public class ItemRepositoryTest {
                 .withDescription("Item 4")
                 .withPrice(4.4)
                 .withStockAmount(4)
+                .withId(4)
                 .build();
 
-        itemList.add(item2);
-        itemList.add(item3);
-        itemList.add(item4);
+        itemList.put(item2.getId(), item2);
+        itemList.put(item3.getId(), item3);
+        itemList.put(item4.getId(), item4);
     }
 
 
     @Test
-    public void addNewItem_whenNewItemIsAddedInEmptyList_returnNotANewCustomerList() {
+    public void addNewItem_whenNewItemIsAddedInEmptyMap_returnNotANewCustomerMap() {
         testEmptyItemRepo.addNewItem(item1);
 
         assertNotEquals(new ItemRepository(), testEmptyItemRepo);
     }
 
     @Test
-    public void addNewItem_whenNewItemIsAddedInEmptyList_returnNotAnEmptyList() {
+    public void addNewItem_whenNewItemIsAddedInEmptyMap_returnNotAnEmptyMap() {
         testEmptyItemRepo.addNewItem(item1);
 
         assertNotNull(testEmptyItemRepo);
@@ -73,15 +76,42 @@ public class ItemRepositoryTest {
 
     @Test
     public void addNewItem_whenNewItemIsAddedToPopulatedList_addsToList() {
-        List<Item> testContainsAllItems = new ArrayList<>();
-        testContainsAllItems.add(item2);
-        testContainsAllItems.add(item3);
-        testContainsAllItems.add(item4);
-        testContainsAllItems.add(item1);
+        Map<Integer, Item> testContainsAllItems = new HashMap<>();
+        testContainsAllItems.put(item2.getId(), item2);
+        testContainsAllItems.put(item3.getId(), item3);
+        testContainsAllItems.put(item4.getId(), item4);
+        testContainsAllItems.put(item1.getId(), item1);
 
         testPopulatedItemRepo.addNewItem(item1);
 
         assertEquals(testPopulatedItemRepo.getItemRepository(), testContainsAllItems);
+    }
+
+    @Test
+    public void test_printMapKeys() {
+        testPopulatedItemRepo.addNewItem(item1);
+
+        Set<Integer> keys = testPopulatedItemRepo.getItemRepository().keySet();
+        for(Integer key : keys){
+            System.out.println(key);
+        }
+    }
+
+    @Test
+    public void updateItem_whenItemIsUpdated_returnNewInformationReplacingTheOldItemInformation() {
+        item5 = new Item.ItemBuilder()
+                .withName("Item 5")
+                .withDescription("Item 5")
+                .withPrice(5.5)
+                .withStockAmount(5)
+                .withId(4)  // update item4
+                .build();
+
+        // System.out.println(testPopulatedItemRepo.getItemRepository().get(4).getName());
+        testPopulatedItemRepo.updateItem(item5);
+
+        // System.out.println(testPopulatedItemRepo.getItemRepository().get(4).getName());
+        assertEquals(testPopulatedItemRepo.getItemRepository().get(4).getName(), item5.getName());
     }
 
 }

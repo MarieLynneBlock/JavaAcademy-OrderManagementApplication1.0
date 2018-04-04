@@ -8,6 +8,8 @@ public class ItemDto {
     private double price;
     private int stockAmount;
 
+    private int id;
+
     public ItemDto() {
     }
 
@@ -27,6 +29,9 @@ public class ItemDto {
         return stockAmount;
     }
 
+    public int getId() {
+        return id;
+    }
 
     public ItemDto withName(String name) {
         this.name = name;
@@ -48,5 +53,9 @@ public class ItemDto {
         return this;
     }
 
+    public ItemDto withId(int id) {
+        this.id = id;
+        return this;
+    }
 
 }

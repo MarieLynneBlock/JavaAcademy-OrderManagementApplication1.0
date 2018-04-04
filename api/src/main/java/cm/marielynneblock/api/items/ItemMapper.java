@@ -17,7 +17,8 @@ public class ItemMapper {
                 .withName(item.getName())
                 .withDescription(item.getDescription())
                 .withPrice(item.getPrice())
-                .withStockAmount(item.getStockAmount());
+                .withStockAmount(item.getStockAmount())
+                .withId(item.getId());
     }
 
     public Item toDomain(ItemDto itemDto) {
@@ -26,6 +27,7 @@ public class ItemMapper {
                 .withDescription((itemDto.getDescription()))
                 .withPrice(itemDto.getPrice())
                 .withStockAmount((itemDto.getStockAmount()))
+                .withId(itemDto.getId())
                 .build();
     }
 

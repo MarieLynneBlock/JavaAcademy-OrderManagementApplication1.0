@@ -3,6 +3,8 @@ package cm.marielynneblock.service.items;
 import cm.marielynneblock.domain.items.Item;
 import cm.marielynneblock.domain.items.ItemRepository;
 
+import java.util.Map;
+
 public class ItemService {
     private ItemRepository itemRepository;
 
@@ -13,6 +15,11 @@ public class ItemService {
     public Item addNewItem(Item newItem) {
         itemRepository.addNewItem(newItem);
         return newItem;
+    }
+
+    public Item updateItem(Item updatedItem) {
+        itemRepository.updateItem(updatedItem);
+        return updatedItem;
     }
 
 }

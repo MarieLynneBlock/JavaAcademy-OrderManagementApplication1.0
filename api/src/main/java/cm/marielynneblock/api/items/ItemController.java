@@ -29,4 +29,12 @@ public class ItemController {
                         itemMapper.toDomain(itemDto)));
     }
 
+    @PutMapping(path = "/itemId", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public ItemDto updateItem(@PathVariable int itemId, @RequestBody ItemDto updatedItemDto) {
+        return itemMapper.toDto(
+                itemService.updateItem(
+                        itemMapper.toDomain(updatedItemDto.withId(itemId))));
+    }
+
 }
