@@ -1,6 +1,5 @@
 package cm.marielynneblock.api.orders;
 
-import cm.marielynneblock.api.customers.CustomerMapper;
 import cm.marielynneblock.domain.items.Item;
 import cm.marielynneblock.domain.orders.ItemGroup;
 import cm.marielynneblock.domain.orders.Order;
@@ -12,27 +11,25 @@ import java.util.stream.Collectors;
 
 @Named
 public class OrderMapper {
-    private CustomerMapper customerMapper;
     private ItemGroupMapper itemGroupMapper;
 
 
 
     @Inject
-    public OrderMapper(ItemGroupMapper itemGroupMapper, CustomerMapper customerMapper) {
-        this.customerMapper = customerMapper;
+    public OrderMapper(ItemGroupMapper itemGroupMapper) {
         this.itemGroupMapper = itemGroupMapper;
 
     }
 
-    public OrderDto orderToDto(Order orderToMap){
-        List<ItemGroupDto> itemGroupDtos = orderToMap.getItems().stream()
+    public OrderDto toDto(Order order){
+        List<ItemGroupDto> itemGroupDtos = order.getItems().stream()
                 .map(itemGroup -> itemGroupMapper.toDto(itemGroup))
                 .collect(Collectors.toList());
 
         return new OrderDto()
-                .withCustomer(orderToMap.getCustomer())
-                .withOrderId(orderToMap.getOrderId())
-                .withTotalPrice(orderToMap.getTotalPrice())
+                .withCustomer(order.getCustomer())
+                .withOrderId(order.getOrderId())
+                .withTotalPrice(order.getTotalPrice())
                 .withItems(itemGroupDtos);
 
     }
