@@ -14,6 +14,10 @@
     <dependencies>
         <dependency>
             <groupId>cm.marielynneblock</groupId>
+            <artifactId>domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cm.marielynneblock</groupId>
             <artifactId>service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
