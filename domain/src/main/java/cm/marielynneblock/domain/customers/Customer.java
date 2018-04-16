@@ -1,5 +1,7 @@
 package cm.marielynneblock.domain.customers;
 
+import java.util.Objects;
+
 public class Customer {
     private final String firstName;
     private final String lastName;
@@ -15,6 +17,7 @@ public class Customer {
         this.phoneNumber = builder.phoneNumber;
     }
 
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -25,6 +28,25 @@ public class Customer {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(firstName, customer.firstName) &&
+                Objects.equals(lastName, customer.lastName) &&
+                Objects.equals(address, customer.address) &&
+                Objects.equals(email, customer.email) &&
+                Objects.equals(phoneNumber, customer.phoneNumber);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(firstName, lastName, address, email, phoneNumber);
+    }
+
 
     public String getFirstName() {
         return firstName;
