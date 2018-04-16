@@ -9,7 +9,7 @@ import javax.inject.Inject;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping(path = "/order")
+@RequestMapping(path = "/orders")
 public class OrderController {
     private OrderService orderService;
     private OrderMapper orderMapper;

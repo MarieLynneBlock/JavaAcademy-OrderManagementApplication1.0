@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping(path = {"/customer"})
+@RequestMapping(path = {"/customers"})
 public class CustomerController {
     private CustomerService customerService;
     private CustomerMapper customerMapper;

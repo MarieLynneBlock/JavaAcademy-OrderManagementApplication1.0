@@ -10,7 +10,7 @@ import javax.inject.Inject;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping(path = {"/item"})
+@RequestMapping(path = {"/items"})
 public class ItemController {
     private ItemService itemService;
     private ItemMapper itemMapper;
